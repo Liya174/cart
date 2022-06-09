@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p {
+  padding-bottom: 15px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-column-gap: 10px;
+  max-width: 1200px;
+  min-height: 100vh;
+  width: 95%;
+  margin: 0 auto;
+}
