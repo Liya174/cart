@@ -9,23 +9,29 @@ function Product({ product, setCount }) {
       <p>{product.title}</p>
       <p>{product.description}</p>
       
-      <p>Цена: {product.price} руб.</p>
-      
-      <div className={s.counterContainer}>
-        <button 
-          className={s.counterButton}
-          onClick={() => changeCount('remove')}
-        >
-          -
-        </button>
-        <div className={s.counter}>{product.count}</div>
-        <button 
-          className={s.counterButton}
-          onClick={() => changeCount('add')}
-        >
-          +
-        </button>
-      </div>
+      <p>Цена: {product.price} руб.</p>      
+        {product.count === 0 ? (
+            <button className={s.button} onClick={() => changeCount('add')}>
+              Добавить в корзину
+            </button>
+          ) : (
+            <div className={s.counterContainer}>
+              <button 
+                className={s.button}
+                onClick={() => changeCount('remove')}
+              >
+                -
+              </button>
+              <div className={s.counter}>{product.count}</div>
+              <button 
+                className={s.button}
+                onClick={() => changeCount('add')}
+              >
+                +
+              </button>
+            </div>
+          )
+        }
     </div>
   );
 
